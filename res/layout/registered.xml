@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_regist">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/regist"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/user" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignRight="@+id/regist"
+        android:layout_toRightOf="@+id/imageView1"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/phone" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_toRightOf="@+id/imageView2"
+        android:ems="10" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_centerVertical="true"
+        android:src="@drawable/key" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/keyright" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView4"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignRight="@+id/editText2"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignRight="@+id/editText3"
+        android:layout_toRightOf="@+id/imageView4"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/regist"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView4"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape"
+        android:text="@string/registe" />
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/regist"
+        android:layout_below="@+id/regist"
+        android:text="@string/usertologin" 
+        android:background="#00000000"/>
+
+</RelativeLayout>
