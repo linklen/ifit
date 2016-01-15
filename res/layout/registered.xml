@@ -3,100 +3,130 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_regist">
-
+    
     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/regist"
+        android:id="@+id/image_ifit"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/user" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ifit" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/registed_edit_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignRight="@+id/regist"
-        android:layout_toRightOf="@+id/imageView1"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="30dp"
-        android:layout_height="40dp"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_below="@+id/imageView1"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/phone" />
+        android:layout_above="@+id/registed_edit_key"
+        android:layout_alignLeft="@+id/registed_edit_user"
+        android:layout_alignRight="@+id/regist_button"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:inputType="phone" 
+        android:hint="手机号，用于找回密码" 
+        android:textColor="@drawable/blue"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/registed_edit_conkey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView2"
-        android:layout_alignRight="@+id/editText1"
-        android:layout_toRightOf="@+id/imageView2"
-        android:ems="10" />
+        android:layout_above="@+id/regist_button"
+        android:layout_alignLeft="@+id/registed_edit_user"
+        android:layout_alignRight="@+id/regist_button"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="确认密码"
+        android:inputType="textPassword" 
+        android:textColor="@drawable/blue"/>
+    
+    <EditText
+        android:id="@+id/registed_edit_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/registed_edit_phone"
+        android:layout_alignRight="@+id/regist_button"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@+id/image_user"
+        android:ems="10"
+        android:hint="请输入注册名"
+        android:textColor="@drawable/blue" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/image_conkey"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_centerVertical="true"
+        android:layout_above="@+id/regist_button"
+        android:layout_alignLeft="@+id/regist_button"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/conkey" />
+
+    <Button
+        android:id="@+id/regist_button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/login_button_selector"
+        android:text="注册" />
+
+    <TextView
+        android:id="@+id/turn_findpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/regist_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="10dip"
+        android:text="忘记密码" />
+
+	<TextView
+        android:id="@+id/turn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_alignRight="@+id/regist_button"
+        android:text="已有账号，点此登陆"
+        android:textSize="10sp" />
+        
+    <ImageView
+        android:id="@+id/image_key"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/image_conkey"
+        android:layout_alignLeft="@+id/regist_button"
         android:src="@drawable/key" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/image_phone"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:layout_alignLeft="@+id/imageView3"
-        android:layout_below="@+id/imageView3"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/keyright" />
+        android:layout_above="@+id/image_key"
+        android:layout_marginBottom="5dp"
+        android:layout_alignLeft="@+id/regist_button"
+        android:src="@drawable/phone" />
+
+    <ImageView
+        android:id="@+id/image_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/image_phone"
+        android:layout_marginBottom="5dp"
+        android:layout_alignLeft="@+id/regist_button"
+        android:src="@drawable/user" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/registed_edit_key"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView4"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_alignRight="@+id/editText2"
+        android:layout_above="@+id/registed_edit_conkey"
+        android:layout_alignLeft="@+id/registed_edit_user"
+        android:layout_alignRight="@+id/regist_button"
+        android:layout_marginBottom="5dp"
         android:ems="10"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView4"
-        android:layout_alignRight="@+id/editText3"
-        android:layout_toRightOf="@+id/imageView4"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/regist"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView4"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/shape"
-        android:text="@string/registe" />
-
-    <Button
-        android:id="@+id/button1"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignLeft="@+id/regist"
-        android:layout_below="@+id/regist"
-        android:text="@string/usertologin" 
-        android:background="#00000000"/>
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:textColor="@drawable/blue" />
 
 </RelativeLayout>

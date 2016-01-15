@@ -6,23 +6,23 @@
     android:background="@drawable/starpic_later" >
 
     <Button
-        android:id="@+id/firstzc"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/firstdl"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="55dp"
-        android:text="@string/registe" 
-        android:background="@drawable/login_button_selector"/>
-
-    <Button
         android:id="@+id/firstdl"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/firstzc"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="26dp"
-        android:text="@string/login" 
-        android:background="@drawable/login_button_selector"/>
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/login_button_selector"
+        android:text="登陆" />
+
+    <Button
+        android:id="@+id/firstzc"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/firstdl"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="46dp"
+        android:background="@drawable/login_button_selector"
+        android:text="注册" />
     
 </RelativeLayout>

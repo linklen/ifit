@@ -4,76 +4,84 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_regist">
 
-    <Button
-        android:id="@+id/no_user_registered"
-        style="?android:attr/buttonStyleSmall"
+    <TextView
+        android:id="@+id/turn_findpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/user_login_button"
-        android:layout_below="@+id/user_login_button"
-        android:text="没有账号，点此注册"
-        android:background="#00000000"
+        android:layout_alignLeft="@+id/login_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:text="忘记密码"
         android:textSize="10sp" />
 
-    <EditText
-        android:id="@+id/user_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/user_login_button"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/userpic"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword" />
+    <ImageView
+        android:id="@+id/image_ifit"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ifit" />
 
     <ImageView
-        android:id="@+id/userpic"
+        android:id="@+id/image_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/keypic"
-        android:layout_alignTop="@+id/user_name"
+        android:layout_above="@+id/image_key"
+        android:layout_alignLeft="@+id/login_button"
+        android:layout_marginBottom="5dp"
         android:src="@drawable/user" />
 
     <Button
-        android:id="@+id/user_login_button"
+        android:id="@+id/login_button"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/user_password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/shape"
-        android:text="@string/login" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/login_button_selector"
+        android:text="登陆" />
 
-    <ImageView
-        android:id="@+id/keypic"
+    <TextView
+        android:id="@+id/turn_regist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/user_login_button"
-        android:layout_alignLeft="@+id/user_login_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_alignRight="@+id/login_button"
+        android:text="没有账号，点此注册"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/image_key"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/login_button"
+        android:layout_alignLeft="@+id/login_button"
+        android:layout_marginBottom="15dp"
         android:src="@drawable/key" />
 
     <EditText
-        android:id="@+id/user_name"
+        android:id="@+id/login_edit_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/user_password"
-        android:layout_alignRight="@+id/user_password"
-        android:layout_toRightOf="@+id/keypic"
+        android:layout_alignBottom="@+id/image_user"
+        android:layout_alignRight="@+id/login_button"
+        android:layout_toRightOf="@+id/image_user"
         android:ems="10"
-        android:hint="请输入用户名" >
+        android:hint="请输入用户名"
+        android:textColor="@drawable/blue"/>
 
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/forget_password"
-        style="?android:attr/buttonStyleSmall"
+    <EditText
+        android:id="@+id/login_edit_key"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/user_login_button"
-        android:layout_below="@+id/user_login_button"
-        android:text="@string/forgotpassword"
-        android:textSize="10sp"
-        android:background="#00000000" />
+        android:layout_alignBottom="@+id/image_key"
+        android:layout_alignRight="@+id/login_button"
+        android:layout_toRightOf="@+id/image_key"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:inputType="textPassword" 
+        android:textColor="@drawable/blue"/>
 
 </RelativeLayout>

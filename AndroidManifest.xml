@@ -25,6 +25,7 @@
         <activity android:name=".activity.loginfirst"></activity>
         <activity android:name=".activity.login"></activity>
         <activity android:name=".activity.registe"></activity>
+        <activity android:name=".activity.findpassword"></activity>
     </application>
 
 </manifest>
