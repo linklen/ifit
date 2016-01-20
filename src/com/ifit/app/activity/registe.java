@@ -10,7 +10,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Message;
+
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -19,12 +22,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class registe extends Activity implements OnClickListener {
 
 	private EditText Einputname,Einputkey,Einputphone,Einputconkey;
 	private String Sinputname,Sinputkey,Sinputconkey,Sinputphone;
 	private user usedb;
 	public SQLiteDatabase db;
+	public int click_back_count = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -55,11 +60,13 @@ public class registe extends Activity implements OnClickListener {
 		case R.id.turn_login:
 			Intent intent1 = new Intent (this,login.class);
 			startActivity(intent1);
+			overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
 			finish();
 			break;
 		case R.id.turn_findpassword:
 			Intent intent2 = new Intent (this,findpassword.class);
 			startActivityForResult(intent2,1);
+			overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
 			break;
 		case R.id.regist_button:
 			//将数据装入字符串中
@@ -131,7 +138,8 @@ public class registe extends Activity implements OnClickListener {
 		values.put("name", addname);
 		values.put("password", addpassword);
 		values.put("phone", addphone);
-		values.put("isadmin", false);
+		values.put("isadmin", "false");
+		values.put("isnew", "true");
 		db.insert("User_table", null, values);
 	}
 
@@ -142,5 +150,33 @@ public class registe extends Activity implements OnClickListener {
 		db.close();
 	}
 	
+	@Override    
+	public boolean onKeyDown(int keyCode, KeyEvent event) {  
+	if(keyCode == KeyEvent.KEYCODE_BACK){
+		double_click_exit();
+		return false;
+	}else{
+	return  super.onKeyDown(keyCode, event);
+		}
+	}
+	public void double_click_exit(){
+		if(click_back_count == 0){
+			Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+			click_back_count = 1;
+			mHandler.sendEmptyMessageDelayed(0, 1500);
+		}else {
+			finish();
+		}
+	}
 	
+	Handler mHandler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+			click_back_count = 0;
+		}
+		
+	};
 }

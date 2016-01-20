@@ -5,23 +5,30 @@ import com.ifit.app.db.user;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Message;
+
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class login extends Activity implements OnClickListener{
 
 	private EditText Einputname,Einputkey;
 	private user usedb;
 	private SQLiteDatabase db;
+	public int click_back_count = 0;
 	
 	
 	@Override
@@ -54,14 +61,15 @@ public class login extends Activity implements OnClickListener{
 		case R.id.turn_findpassword:
 			Intent turnfindpassword = new Intent(this,findpassword.class);
 			startActivityForResult(turnfindpassword,0);
+			overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
 			break;
 		case R.id.turn_regist :
 			Intent turnregist = new Intent(this,registe.class);
 			startActivity(turnregist);
+			overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
 			finish();
 			break;
 		case R.id.login_button:
-			boolean i=false;
 			String Sinputname = Einputname.getText().toString();
 			String Sinputkey = Einputkey.getText().toString();
 			if(Sinputname.equals("")){
@@ -87,7 +95,7 @@ public class login extends Activity implements OnClickListener{
 	
 	public  void isUserInfo(String name, String key){
 		Cursor cursor =  db.query("User_table", 
-		new String[]{"name,password,isadmin"}, "name = ?", 
+		new String[]{"name,password,isadmin,isnew"}, "name = ?", 
 		new String[]{name}, null, null, null);
 		cursor.moveToFirst();
 		if(cursor.getCount()<1){
@@ -103,10 +111,28 @@ public class login extends Activity implements OnClickListener{
 					if(cursor.getString(cursor.getColumnIndex("isadmin")).equals("true")){
 						Intent adminlogin = new Intent(this,registe.class);
 						startActivity(adminlogin);
+						loginfirst.loginfirst_instance.finish();
 						finish();
 					}else{
-						Intent userlogin = new Intent(this,findpassword.class);
+						//搭建SharedPreference
+						SharedPreferences.Editor islogin = 
+								getSharedPreferences("islogin", MODE_PRIVATE).edit();
+						islogin.putString("user", name);
+						islogin.putBoolean("login_in", true);
+						islogin.commit();
+						//搭建Intent并传递数据
+						Intent userlogin = new Intent(this,Home_page.class);
+						if(cursor.getString(cursor.getColumnIndex("isnew")).equals("true")){
+							userlogin.putExtra("is_new", true);
+							ContentValues values = new ContentValues();
+							values.put("isnew", "false");
+							db.update("User_table", values, "name = ?", new String[]{name});
+						}
+						userlogin.putExtra("the_user_name", name);
+						userlogin.putExtra("is_send", true);
 						startActivity(userlogin);
+						loginfirst.loginfirst_instance.finish();
+						finish();
 					}
 				}
 			}
@@ -118,6 +144,36 @@ public class login extends Activity implements OnClickListener{
 		super.onDestroy();
 		db.close();
 	}
+	
+	@Override    
+	public boolean onKeyDown(int keyCode, KeyEvent event) {  
+	if(keyCode == KeyEvent.KEYCODE_BACK){
+		double_click_exit();
+		return false;
+	}else{
+	return  super.onKeyDown(keyCode, event);
+		}
+	}
+	public void double_click_exit(){
+		if(click_back_count == 0){
+			Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+			click_back_count = 1;
+			mHandler.sendEmptyMessageDelayed(0, 1500);
+		}else {
+			finish();
+		}
+	}
+	
+	Handler mHandler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			// TODO Auto-generated method stub
+			super.handleMessage(msg);
+			click_back_count = 0;
+		}
+		
+	};
 	
 	
 }

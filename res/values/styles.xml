@@ -16,5 +16,15 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="Exit_DialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item> <!-- 窗口背景色 -->
+        <item name="android:windowFrame">@null</item> <!-- Dialog的windowFrame框为无 -->
+        <item name="android:windowNoTitle">true</item> <!-- 是否没有window标题栏 -->
+        <item name="android:windowIsFloating">true</item> <!--是否浮现在activity之上  -->
+        <item name="android:windowIsTranslucent">true</item> <!--  窗口是否半透明 -->
+        <item name="android:windowContentOverlay">@null</item> <!-- 这个不设置的话，可能会出现边框黑线 -->
+        <item name="android:backgroundDimEnabled">true</item> <!-- 是否背景模糊 -->
+    </style>
 
 </resources>

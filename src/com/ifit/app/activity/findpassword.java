@@ -5,7 +5,6 @@ import com.ifit.app.db.user;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -46,6 +45,7 @@ public class findpassword extends Activity implements OnClickListener{
 		switch(v.getId()){
 		case R.id.back_button:
 			finish();
+			overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
 			break;
 		case R.id.complete_button:
 			Sinputname = Einputname.getText().toString();

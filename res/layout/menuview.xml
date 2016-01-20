@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:gravity="center"
+    android:background="@drawable/menu_bg">
+    
+    <Button
+        android:id="@+id/menu_btn_switch_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/login_button_selector"
+        android:text="注销"/>
+    
+    <Button
+        android:id="@+id/menu_btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp" 
+        android:background="@drawable/login_button_selector"
+        android:text="取消"/>
+    "
+    <Button
+        android:id="@+id/menu_btn_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp" 
+        android:background="@drawable/login_button_selector"
+        android:text="退出"/>
+
+</LinearLayout>

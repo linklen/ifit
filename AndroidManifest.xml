@@ -26,6 +26,11 @@
         <activity android:name=".activity.login"></activity>
         <activity android:name=".activity.registe"></activity>
         <activity android:name=".activity.findpassword"></activity>
+        <activity android:name=".activity.Home_page"></activity>
+        <activity android:name=".other.Exit_dialog" android:theme="@style/Exit_DialogStyle"></activity>
+        <activity android:name=".activity.Personal_center" ></activity>
+        <activity android:name=".activity.Personal_rank"></activity>
+        <activity android:name=".activity.Personal_fit"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <com.ifit.app.other.Titlelayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		></com.ifit.app.other.Titlelayout>
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+    <android.support.v4.view.ViewPager
+	    android:id="@+id/fit_viewpager"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="#00ffff"
+	    ></android.support.v4.view.ViewPager>
+    </RelativeLayout>
+</LinearLayout>

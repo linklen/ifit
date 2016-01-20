@@ -12,7 +12,8 @@ public class user extends SQLiteOpenHelper {
 			"name text primary key, " +
 			"password text, " +
 			"phone text, " +
-			"isadmin text)";
+			"isadmin text, " +
+			"isnew text)";
 	private Context mContext;
 	public user(Context context, String name, CursorFactory factory, int version) {
 		super(context, name, factory, version);

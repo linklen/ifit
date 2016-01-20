@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_regist">
+    android:background="@drawable/login_regist_bg">
     
     <ImageView
         android:id="@+id/image_ifit"
@@ -13,6 +13,18 @@
         android:layout_marginTop="35dp"
         android:src="@drawable/ifit" />
 
+    <EditText
+        android:id="@+id/registed_edit_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/registed_edit_phone"
+        android:layout_alignRight="@+id/regist_button"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@+id/image_user"
+        android:ems="10"
+        android:hint="请输入注册名"
+        android:textColor="@drawable/blue" />
+    
     <EditText
         android:id="@+id/registed_edit_phone"
         android:layout_width="wrap_content"
@@ -25,6 +37,19 @@
         android:inputType="phone" 
         android:hint="手机号，用于找回密码" 
         android:textColor="@drawable/blue"/>
+    
+    <EditText
+        android:id="@+id/registed_edit_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/registed_edit_conkey"
+        android:layout_alignLeft="@+id/registed_edit_user"
+        android:layout_alignRight="@+id/regist_button"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:textColor="@drawable/blue" />
 
     <EditText
         android:id="@+id/registed_edit_conkey"
@@ -39,17 +64,7 @@
         android:inputType="textPassword" 
         android:textColor="@drawable/blue"/>
     
-    <EditText
-        android:id="@+id/registed_edit_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/registed_edit_phone"
-        android:layout_alignRight="@+id/regist_button"
-        android:layout_marginBottom="5dp"
-        android:layout_toRightOf="@+id/image_user"
-        android:ems="10"
-        android:hint="请输入注册名"
-        android:textColor="@drawable/blue" />
+    
 
     <ImageView
         android:id="@+id/image_conkey"
@@ -116,17 +131,6 @@
         android:layout_alignLeft="@+id/regist_button"
         android:src="@drawable/user" />
 
-    <EditText
-        android:id="@+id/registed_edit_key"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/registed_edit_conkey"
-        android:layout_alignLeft="@+id/registed_edit_user"
-        android:layout_alignRight="@+id/regist_button"
-        android:layout_marginBottom="5dp"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword"
-        android:textColor="@drawable/blue" />
+    
 
 </RelativeLayout>

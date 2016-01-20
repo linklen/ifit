@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/titlelayout_bg">
+    
+    <TextView 
+        android:id="@+id/title_user_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_margin="5dip"
+        android:text="头像"
+        />
+    
+    <TextView 
+        android:id="@+id/title_user_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:text="本周排名"
+        />
+    
+	<ImageView
+	    android:id="@+id/title_user_fit"
+	    android:layout_width="80dp"
+	    android:layout_height="40dp"
+	    android:src="@drawable/turn_fit_page" />
+
+</LinearLayout>
