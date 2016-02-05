@@ -10,21 +10,25 @@ import com.ifit.app.activity.Personal_rank;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.AttributeSet;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class Titlelayout extends LinearLayout{
+public class Titlelayout extends RelativeLayout{
 
+	private Bitmap mbitmap;
 	public Titlelayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 		LayoutInflater.from(context).inflate(R.layout.titlelayout, this);
-		TextView title_user_center = (TextView)findViewById(R.id.title_user_center);
+		ImageView title_user_center = (ImageView)findViewById(R.id.title_user_center);
 		TextView title_user_rank = (TextView)findViewById(R.id.title_user_rank);
 		ImageView title_user_fit = (ImageView)findViewById(R.id.title_user_fit);
 		//String con = getContext().toString();//获得Context的ID，没有用处，会变
@@ -34,6 +38,13 @@ public class Titlelayout extends LinearLayout{
 		//Log.d("con", con);
 		//Log.d("cla", cla);
 		//Log.d("pak", pak);
+		if(false){
+			//如果用户数据库中存在头像则进行设置
+		}else{
+		mbitmap = BitmapFactory.decodeResource(getResources(), R.drawable.default_headimage);}
+		title_user_center.setImageDrawable(new CircleImageDrawable(mbitmap));
+		
+		
 		if(getname.equals(compare_name)){
 			title_user_fit.setImageResource(R.drawable.turn_home_page);
 			

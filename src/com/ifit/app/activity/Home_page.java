@@ -33,6 +33,7 @@ import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
@@ -47,6 +48,8 @@ public class Home_page extends FragmentActivity {
 	private Button btn_change_user,btn_menu_cancel,btn_menu_exit;//popuwindow布局中的按键
 	private ImageView btn_news,btn_learn,btn_search;//底部按钮的按键
 	private int before = 0;//上一个页面编号
+	//private LinearLayout view_pager_container;
+	
 	 
 	@Override
 	protected void onCreate(@Nullable Bundle arg0) {
@@ -83,6 +86,15 @@ public class Home_page extends FragmentActivity {
 		viewpager = (ViewPager)findViewById(R.id.viewpager);
 		viewpager.setAdapter(adapter);
 		viewpager.addOnPageChangeListener(new MyPagerChangeListener());//setOnPageChangeListener过时了
+		/*view_pager_container.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				// TODO Auto-generated method stub
+				return viewpager.dispatchTouchEvent(event);
+				
+			}
+		});*/
 		
 		//开始变换按钮颜色
 		btn_news=(ImageView)findViewById(R.id.btn_news);
@@ -239,6 +251,7 @@ public class Home_page extends FragmentActivity {
 				clear.commit();
 				Intent turn_login = new Intent (Home_page.this,login.class);
 				startActivity(turn_login);
+				turn_login.putExtra("isback", true);
 				finish();
 				menuWindow.dismiss();
 			}

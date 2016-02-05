@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:gravity="center_vertical"
-    android:background="@drawable/titlelayout_bg">
+    android:layout_height="60dp"
+    android:background="@drawable/titlelayout_bg_normal">
     
-    <TextView 
+    <ImageView 
         android:id="@+id/title_user_center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:layout_margin="5dip"
-        android:text="头像"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+	    android:layout_marginLeft="10dp"
         />
-    
-    <TextView 
+
+    <ImageView
+        android:id="@+id/title_user_fit"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/turn_fit_page" />
+
+    <TextView
         android:id="@+id/title_user_rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_margin="5dip"
-        android:text="本周排名"
-        />
-    
-	<ImageView
-	    android:id="@+id/title_user_fit"
-	    android:layout_width="80dp"
-	    android:layout_height="40dp"
-	    android:src="@drawable/turn_fit_page" />
+        android:layout_toLeftOf="@+id/title_user_fit"
+        android:text="本周排名" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/title_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/title_user_center"
+        android:text="用户名" />
+
+</RelativeLayout>

@@ -8,6 +8,7 @@
     <drawable name="clr_pressed">#FFFFFF</drawable>
     <drawable name="white">#FFFFFF</drawable>
     <drawable name="blue">#00EEEE</drawable>
+    <drawable name="bg_gray">#E1E1E1</drawable>
     
 
 </resources>

@@ -6,4 +6,13 @@
     android:background="#00ffff"
     android:layout_gravity="center">
     
+
+	<com.ifit.app.other.Normal_ListView_PullDownAndUp.MyListViewPullDownAndUp
+	    android:id="@+id/news_list"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent">
+	    
+	</com.ifit.app.other.Normal_ListView_PullDownAndUp.MyListViewPullDownAndUp>
+        
+    
 </LinearLayout>

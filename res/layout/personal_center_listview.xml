@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/sky_blue">
+    
+    
+   <com.ifit.app.other.Rainbow_Bar_SwipeRefreshAndLoad.SwipeRefreshLayout
+       android:id="@+id/personal_center_swipe_container"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent">
+       
+        <ListView 
+        android:id="@+id/personal_center_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:dividerHeight="1px"
+        android:overScrollFooter="@null"
+        android:listSelector="#00000000"
+        />
+
+   </com.ifit.app.other.Rainbow_Bar_SwipeRefreshAndLoad.SwipeRefreshLayout>
+
+   
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        
+        <ImageView 
+            android:id="@+id/personal_center_exit"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:src="@drawable/btn_to_down"/>
+
+        <ImageView
+            android:id="@+id/personal_center_turn_setting"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_turn_setting" />
+    </RelativeLayout>
+    
+    
+</RelativeLayout>

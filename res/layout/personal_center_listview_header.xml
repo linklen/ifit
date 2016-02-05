@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+	>
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        >
+
+        <ImageView
+            android:id="@+id/user_pic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+			android:layout_marginTop="55dp"
+			android:background="@drawable/person_center_headimage_outline"
+            />
+        
+        <TextView
+            android:id="@+id/user_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_pic"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="用户名" 
+            />
+        <LinearLayout 
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/user_nickname"
+            android:layout_marginTop="5dp">
+            
+            <TextView
+            android:id="@+id/user_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22岁" 
+            android:textColor="@color/white"/>
+		
+		<ImageView 
+            android:id="@+id/user_location_marks"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/location_marks"
+            />
+		
+        <TextView
+            android:id="@+id/user_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="温州市"
+            android:textColor="@color/white"
+            />
+        </LinearLayout>
+		
+        
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/top_bottom_gray_line_normal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+                
+            <TextView 
+            android:id="@+id/user_number_personal_dynamic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:gravity="center"
+            android:textSize="20dip"
+            android:textColor="@color/textgray"
+            />
+
+            <RelativeLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+            
+            <TextView 
+            android:id="@+id/user_count_sport_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dip"
+            android:text="0"
+            android:textColor="@color/textgray"
+            />     
+               
+            <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textgray"
+            android:layout_alignBottom="@+id/user_count_sport_time"
+            android:text="分钟"
+            android:layout_toRightOf="@+id/user_count_sport_time"
+            />
+            
+            </RelativeLayout>
+            
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            
+		<TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个人动态"
+            android:textColor="@color/textgray"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本周训练"
+            android:textColor="@color/textgray"
+            android:layout_weight="1"
+            android:gravity="center"
+            />
+        </LinearLayout>
+    </LinearLayout>
+    
+</LinearLayout>

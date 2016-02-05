@@ -18,6 +18,7 @@ public class MyPagerAdapter extends PagerAdapter {
 	public int getCount() {
 		// TODO Auto-generated method stub
 		return mlist_View.size();//返回要滑动页面的个数
+		
 	}
 
 	

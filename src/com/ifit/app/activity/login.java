@@ -30,7 +30,6 @@ public class login extends Activity implements OnClickListener{
 	private SQLiteDatabase db;
 	public int click_back_count = 0;
 	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -46,6 +45,9 @@ public class login extends Activity implements OnClickListener{
 		Button login_btn = (Button) findViewById(R.id.login_button);
 		Einputname = (EditText)findViewById(R.id.login_edit_user);
 		Einputkey = (EditText)findViewById(R.id.login_edit_key);
+
+		
+		
 		//控件监听
 		turn_findpassword.setOnClickListener(this);
 		turn_regist.setOnClickListener(this);
@@ -94,6 +96,11 @@ public class login extends Activity implements OnClickListener{
 	}
 	
 	public  void isUserInfo(String name, String key){
+		
+		//判断是否是注销返回的
+				Intent isback = getIntent();
+				boolean is_back = isback.getBooleanExtra("is_back", false);
+		
 		Cursor cursor =  db.query("User_table", 
 		new String[]{"name,password,isadmin,isnew"}, "name = ?", 
 		new String[]{name}, null, null, null);
@@ -109,9 +116,11 @@ public class login extends Activity implements OnClickListener{
 					cursor.close();
 				}else{
 					if(cursor.getString(cursor.getColumnIndex("isadmin")).equals("true")){
-						Intent adminlogin = new Intent(this,registe.class);
+						Intent adminlogin = new Intent(this,Admin.class);
 						startActivity(adminlogin);
+						if(!is_back){
 						loginfirst.loginfirst_instance.finish();
+						}
 						finish();
 					}else{
 						//搭建SharedPreference
@@ -131,7 +140,8 @@ public class login extends Activity implements OnClickListener{
 						userlogin.putExtra("the_user_name", name);
 						userlogin.putExtra("is_send", true);
 						startActivity(userlogin);
-						loginfirst.loginfirst_instance.finish();
+						if(!is_back){
+						loginfirst.loginfirst_instance.finish();}
 						finish();
 					}
 				}

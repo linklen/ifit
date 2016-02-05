@@ -31,6 +31,19 @@
         <activity android:name=".activity.Personal_center" ></activity>
         <activity android:name=".activity.Personal_rank"></activity>
         <activity android:name=".activity.Personal_fit"></activity>
+        <activity android:name=".activity.Custom_plan"></activity>
+        <activity android:name=".activity.Instant_train"></activity>
+        <activity android:name=".activity.Limit_challenge"></activity>
+        <activity android:name=".activity.Sport_record"></activity>
+        <activity android:name=".activity.Week_train"></activity>
+        <activity android:name=".activity.Setting"></activity>
+        <activity android:name=".activity.Admin"></activity>
+        <activity android:name=".activity.Personal_data"></activity>
+        <activity android:name=".activity.About"></activity>
+        <activity android:name=".activity.Feed_back"></activity>
+        <activity android:name=".other.PickView_dialog" 
+            android:theme="@style/MyPickView_StyleBottom"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
     </application>
 
 </manifest>
