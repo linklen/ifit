@@ -12,7 +12,7 @@
             android:id="@+id/personal_rank_exit"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:src="@drawable/btn_to_down"/>
+            android:src="@drawable/btn_back_white"/>
 
         <TextView
             android:id="@+id/personal_rank_text"
@@ -22,6 +22,58 @@
             android:layout_centerHorizontal="true"
             android:text="本周排名" />
         
+     <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/personal_rank_text"
+        >
+        <ImageView 
+            android:id="@+id/user_head"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            />
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前的排名"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/user_head"
+            android:textSize="25dip"/>
+        <TextView 
+            android:id="@+id/myorder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="50dip"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"/>
+        
     </RelativeLayout>
+        
+    </RelativeLayout>
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dip"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:text=".:以下为本周前九名荣誉榜:."/>
+
+    <ListView 
+        android:id="@+id/personal_rank_listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        
+    </ListView>
+
 
 </LinearLayout>

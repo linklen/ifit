@@ -4,9 +4,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-
-    <TextView 
-        android:layout_width="wrap_content"
+    <RelativeLayout 
+        android:id="@+id/custom_plan_in_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我的计划"/>
+        >
+        <ImageView 
+            android:id="@+id/custom_plan_in_title_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/image_btn_back"/>
+        
+        <TextView 
+            android:text="计划列表"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="20dip"/>
+        
+        <ImageView 
+            android:id="@+id/custom_plan_in_title_add_plan"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/published"/>
+        
+    </RelativeLayout>
+    
+    <ListView 
+        android:id="@+id/custom_plan_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+    </ListView>
+
 </LinearLayout>

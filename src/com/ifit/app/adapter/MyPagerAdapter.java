@@ -3,6 +3,7 @@ package com.ifit.app.adapter;
 import java.util.List;
 
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 

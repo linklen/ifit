@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+        <TextView
+            android:id="@+id/train_rest_Timetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="00"
+            android:layout_margin="30dp"
+            android:textColor="@color/mint_green"
+            android:textSize="100dip" />
+        <TextView 
+            android:id="@+id/train_rest_time_suspended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂停"
+            android:textColor="@color/mint_green"
+            android:layout_margin="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/train_rest_Timetext"/>
+        
+    </RelativeLayout>
+    
+    
+    <LinearLayout 
+        android:id="@+id/train_rest_frag_resting_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        android:visibility="gone"
+        >
+        
+            <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dip"
+        android:text="你知道吗？"/>
+    <TextView 
+        android:id="@+id/train_rest_frag_resting_know"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:textSize="15dip"
+        android:text="你知道吗？"/>
+    
+    <ImageView 
+        android:id="@+id/train_rest_frag_resting_refresh"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:src="@drawable/refresh"/>
+        
+    </LinearLayout>
+
+    <LinearLayout 
+        android:id="@+id/train_rest_frag_next_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+        
+        <ImageView 
+            android:id="@+id/train_rest_frag_next_action_img"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            />
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一个动作"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/gray"/>
+        
+        <TextView 
+            android:id="@+id/train_rest_frag_next_action_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="20dip"
+            android:text="上斜哑铃飞鸟"
+            android:layout_gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+</LinearLayout>

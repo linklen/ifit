@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/finish_train_back">
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="你太棒了"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:textSize="35dip"/>
+    <TextView 
+        android:id="@+id/train_complete_plan_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="你完成了你设置的计划，燃烧了"
+        android:textColor="@color/orangered"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dip"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/train_complete_plan_fire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="40"
+            android:textColor="@color/orangered"
+            android:textSize="75dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/train_complete_plan_fire"
+            android:layout_alignBottom="@+id/train_complete_plan_fire"
+            android:layout_toRightOf="@+id/train_complete_plan_fire"
+            android:text="千卡"
+            android:textColor="@color/orangered" />
+    </RelativeLayout>
+
+    <TextView 
+        android:id="@+id/train_complete_timecount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="减去休息时间，共锻炼了5分钟15秒"
+        android:gravity="center"
+        android:textSize="18dip"
+        android:textColor="@color/red"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/orangered"
+        android:text="你离目标更近了一步，继续努力" />
+
+    <Button
+        android:id="@+id/train_complete_btn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/login_button_selector"
+        android:padding="10dp"
+        android:text="完成计划"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/mint_green" />
+    
+    </LinearLayout>
+
+</RelativeLayout>

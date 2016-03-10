@@ -1,21 +1,33 @@
 package com.ifit.app.activity;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.ifit.app.R;
 import com.ifit.app.adapter.MyFragPagerAdapter;
+import com.ifit.app.db.MyDatabaseHelper;
 import com.ifit.app.fragment.frag_news;
 import com.ifit.app.fragment.frag_search;
 import com.ifit.app.fragment.frag_learn;
+import com.ifit.app.other.CircleImageDrawable;
 import com.ifit.app.other.Exit_dialog;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -35,11 +47,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Home_page extends FragmentActivity {
 
 	public static Home_page Home_page_instance = null; 
+	public static String UsingName = null;
 	ViewPager viewpager;
 	private  boolean menu_display = false;
 	private PopupWindow menuWindow;
@@ -50,7 +64,18 @@ public class Home_page extends FragmentActivity {
 	private int before = 0;//上一个页面编号
 	//private LinearLayout view_pager_container;
 	
-	 
+	
+	//设置title里面的数据
+	public File sdCard,directory,location_image;
+	private MyDatabaseHelper usedb;
+	private SQLiteDatabase db;
+	private SharedPreferences locationdate,getUser_name;//获取和建立文件
+	private String login_name;//储存读进来的账户号
+	private boolean isFirst = true;//记录是否为第一次开启来
+	private ImageView title_user_headimg;
+	private TextView title_user_nickname;
+	private Bitmap mbitmap;
+	
 	@Override
 	protected void onCreate(@Nullable Bundle arg0) {
 		// TODO Auto-generated method stub
@@ -73,6 +98,39 @@ public class Home_page extends FragmentActivity {
 										  "欢迎回来，"+ get_user_name, 
 										  Toast.LENGTH_SHORT).show();}
 					}
+		
+		
+		//数据库的建立，和pref的读取
+		usedb = new MyDatabaseHelper(this, "DataBase.db", null, 1);
+		db = usedb.getReadableDatabase();
+		
+		getUser_name = getSharedPreferences("islogin", 0);
+		login_name = getUser_name.getString("user", "");
+		UsingName = login_name;
+		
+		locationdate = getSharedPreferences("location_user_Data", MODE_PRIVATE);
+		
+		
+		
+		
+		//检测文件夹和文件
+		sdCard = Environment.getExternalStorageDirectory();
+		directory = new File(sdCard.getAbsolutePath()+
+				 "/ifit/temp/UserHeadImage/");
+		if(!directory.exists()){
+		directory.mkdirs();}
+		location_image = new File(directory,"location_image.jpg");
+		
+		
+		//获取顶部视图
+		
+		title_user_nickname = (TextView)findViewById(R.id.title_user_name);
+		title_user_headimg = (ImageView)findViewById(R.id.title_user_center);
+		
+		
+		
+		
+		
 		
 		// 构造适配器
 		List<Fragment> FragmentList = new ArrayList<Fragment>();
@@ -100,9 +158,13 @@ public class Home_page extends FragmentActivity {
 		btn_news=(ImageView)findViewById(R.id.btn_news);
 		btn_learn=(ImageView)findViewById(R.id.btn_learn);
 		btn_search=(ImageView)findViewById(R.id.btn_search);
+		
 		btn_news.setOnClickListener(new MyClickListener(0));
 		btn_learn.setOnClickListener(new MyClickListener(1));
 		btn_search.setOnClickListener(new MyClickListener(2));
+		
+		
+		
 		
 	}
 
@@ -187,6 +249,7 @@ public class Home_page extends FragmentActivity {
 				//menuWindow.setFocusable(true);
 				//menuWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));
 				//menuWindow.setOutsideTouchable(false);
+				//menuWindow.setBackgroundDrawable(new BitmapDrawable());
 				menu_display = true;
 				btn_change_user = (Button)menuview.findViewById(R.id.menu_btn_switch_user);
 				btn_menu_cancel = (Button)menuview.findViewById(R.id.menu_btn_cancel);
@@ -245,15 +308,24 @@ public class Home_page extends FragmentActivity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
-				SharedPreferences.Editor clear = getSharedPreferences("islogin", MODE_PRIVATE)
+				SharedPreferences.Editor clear_login,clear_data;
+				clear_login = getSharedPreferences("islogin", MODE_PRIVATE)
 						.edit();
-				clear.clear();
-				clear.commit();
-				Intent turn_login = new Intent (Home_page.this,login.class);
-				startActivity(turn_login);
-				turn_login.putExtra("isback", true);
-				finish();
+				clear_data = getSharedPreferences("location_user_Data", MODE_PRIVATE)
+						.edit();
+				
+				clear_login.clear();
+				clear_data.clear();
+				
+				clear_login.commit();
+				clear_data.commit();
 				menuWindow.dismiss();
+				
+				Intent turn_login = new Intent (Home_page.this,login.class);
+				//turn_login.putExtra("is_back", true);
+				startActivity(turn_login);
+				finish();
+				
 			}
 			
 		}).show();
@@ -270,4 +342,120 @@ public class Home_page extends FragmentActivity {
 		return true;
 	}
 
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		set_data();
+	}
+
+	
+
+
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		frag_news.frag_news_instance.refreshlist();
+	}
+
+	public void set_data(){
+		isFirst = locationdate.getBoolean("isFirst", true);
+		
+		if(!isFirst){
+			
+			String nickname = locationdate.getString("nickname", "");
+			if(!nickname.equals("")){
+				title_user_nickname.setText(nickname);
+			}
+			boolean isExist_img = true;
+			if(location_image.exists()){
+				//如果用户数据库中存在头像则进行设置
+				mbitmap = BitmapFactory
+						.decodeFile(location_image.toString());
+				title_user_headimg.setImageDrawable(new CircleImageDrawable(mbitmap));
+			}else{
+				isExist_img = get_headimg(login_name);
+				}
+			if(!isExist_img){
+				mbitmap = BitmapFactory.decodeResource(getResources(),
+						R.drawable.default_headimage);
+				title_user_headimg.setImageDrawable(new CircleImageDrawable(mbitmap));
+			}
+			
+			
+		}else{
+			if(location_image.exists()){
+				location_image.delete();
+			}
+			get_data(login_name);
+		}
+		
+	}
+	
+	public void get_data(String getName){
+		
+		Cursor cursor = db.query("User_personal_info_table",
+				 new String[]{"nickname,age,region"},
+				 "name = ?", 
+				 new String[]{getName}, null,null, null);
+		
+		cursor.moveToFirst();
+		String nickname = cursor.getString(cursor.getColumnIndex("nickname"));
+		int age = cursor.getInt(cursor.getColumnIndex("age"));
+		String region = cursor.getString(cursor.getColumnIndex("region"));
+		
+		SharedPreferences.Editor editor = locationdate.edit();
+		editor.putString("nickname", nickname);
+		editor.putInt("age", age);
+		editor.putString("region", region);
+		editor.putBoolean("isFirst", false);
+		editor.commit();
+		
+		cursor.close();
+		set_data();
+		
+	}
+	
+	public boolean get_headimg(String getName){
+		
+		// 读取头像
+		Cursor cursor = db.query("User_headImage_table",
+				new String[] { "user_head_img" }, "name = ?",
+				new String[] { getName }, null, null, null);
+		cursor.moveToFirst();
+		if (cursor.getBlob(cursor.getColumnIndex("user_head_img")) != null) {
+			byte[] get_Headimg = cursor.getBlob(cursor
+					.getColumnIndex("user_head_img"));
+			Bitmap getbitmap = BitmapFactory.decodeByteArray(get_Headimg, 0,
+					get_Headimg.length);
+			title_user_headimg.setImageDrawable(new CircleImageDrawable(getbitmap));
+
+			if (location_image.exists()) {
+				location_image.delete();
+			}
+			try {
+				FileOutputStream Outputimg = new FileOutputStream(
+						location_image);
+				getbitmap.compress(Bitmap.CompressFormat.JPEG, 100, Outputimg);
+				Outputimg.flush();// 清空缓存区域
+				Outputimg.close();
+				// Log.d("xxx", "已经保存");
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			cursor.close();
+			getbitmap.recycle();
+			return true;
+		}else{
+			cursor.close();
+			return false;
+		}
+		
+		
+	}
+	
+	
 }

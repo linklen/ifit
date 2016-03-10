@@ -3,7 +3,166 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
-    
 
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="管理员："
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:textSize="20dip"/>
+        <TextView 
+            android:id="@+id/admin_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_toRightOf="@+id/text"
+            android:layout_centerVertical="true"
+            android:textSize="20dip"/>
+    </RelativeLayout>
+
+    <RelativeLayout 
+        android:id="@+id/learn_manage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="学习文章管理"
+            android:textSize="30dip"
+            android:padding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:id="@+id/order_manage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="本周名次排序"
+            android:textSize="30dip"
+            android:padding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/manage_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="管理其他管理员"
+            android:textSize="30dip"
+            android:padding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/manage_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="普通账号管理"
+            android:textSize="30dip"
+            android:padding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/look_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看反馈信息"
+            android:textSize="30dip"
+            android:padding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/look_userreport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="查看用户举报"
+            android:textSize="30dip"
+            android:padding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/data_statistics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="数据统计"
+            android:textSize="30dip"
+            android:padding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+    
+     <RelativeLayout 
+        android:id="@+id/data_backup_an_restore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        <TextView 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="数据备份与还原"
+            android:textSize="30dip"
+            android:padding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+
+     </LinearLayout>
+     </ScrollView>
 </LinearLayout>

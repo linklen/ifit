@@ -1,8 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    
+    android:orientation="vertical"
+    android:background="@color/black"
+    >
 
-</LinearLayout>
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true">
+        
+        <TextView 
+            android:id="@+id/today_fire_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今日运动消耗热量总计为"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"/>
+        
+        <RelativeLayout 
+            android:id="@+id/fire_count_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/today_fire_text"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true">
+            
+            <TextView 
+            android:id="@+id/today_fire_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="50"
+            android:textSize="55dip"/>
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="千卡"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/today_fire_count"
+                android:layout_alignBaseline="@+id/today_fire_count"/>
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/fire_count_layout">
+            
+            <TextView 
+                android:id="@+id/today_time_count_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="总锻炼时间是"
+                android:textColor="@color/white"
+                android:layout_alignBaseline="@+id/today_time_count"/>
+            
+            <TextView 
+                android:id="@+id/today_time_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50"
+                android:textColor="@color/white"
+                android:textSize="35dip"
+                android:layout_toRightOf="@+id/today_time_count_text"
+                />
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分钟"
+                android:textColor="@color/white"
+                android:layout_toRightOf="@+id/today_time_count"
+                android:layout_alignBaseline="@+id/today_time_count"/>
+        </RelativeLayout>
+        
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     >
+    <LinearLayout 
+        android:id="@+id/edit_plan_data_Layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@drawable/white">
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/edit_plan_data_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="取消"
+                android:textColor="@color/mint_green"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/edit_plan_data_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="提示"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/edit_plan_data_complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:text="确定"
+                android:textColor="@color/mint_green"
+                android:textSize="18sp" />
+        </RelativeLayout>
+            
+        <RelativeLayout 
+            android:id="@+id/edit_plan_data_EditText_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            android:background="@drawable/top_bottom_gray_line_normal"
+            >
+            
+            
+            <EditText 
+                android:id="@+id/edit_plan_data_EditPlanName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:maxLength="10"
+                android:textColor="@color/black"
+                android:gravity="top|left"
+                android:background="@null"
+                android:hint="请填写内容..."
+                android:layout_above="@+id/edit_plan_data_EditText_CheckNumber"
+                android:textCursorDrawable="@null"
+                android:visibility="gone"
+                />
+            <EditText 
+                android:id="@+id/edit_plan_data_EditDescribe"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="top|left"
+                android:textColor="@color/black"
+                android:hint="想描述点什么..."
+                android:layout_above="@+id/edit_plan_data_EditText_CheckNumber"
+                android:textCursorDrawable="@null"
+                android:background="@null"
+                android:maxLength="100"
+                android:visibility="gone"
+                />
+            <TextView 
+                android:id="@+id/edit_plan_data_EditText_CheckNumber"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/gray"
+                android:text="10/10"/>
+        </RelativeLayout>
+        
+        
+        <RelativeLayout 
+            android:id="@+id/edit_plan_data_select_Training_site_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            android:background="@drawable/top_bottom_gray_line_normal">
+
+            <RelativeLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+            <Button
+                android:id="@+id/button1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/select_train_site"
+                android:text="胸部"
+                android:textColor="@color/black" />
+          
+            <Button
+                android:id="@+id/button2"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button1"
+                android:background="@drawable/select_train_site"
+                android:text="背部" 
+                android:textColor="@color/black"/>
+            
+            <Button
+                android:id="@+id/button3"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button2"
+                android:background="@drawable/select_train_site"
+                android:text="肩部"
+                android:textColor="@color/black" />
+            
+            <Button
+                android:id="@+id/button4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button3"
+                android:background="@drawable/select_train_site"
+                android:text="手臂" 
+                android:textColor="@color/black"/>
+            
+            <Button
+                android:id="@+id/button5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/button4"
+                android:background="@drawable/select_train_site"
+                android:text="肱二头肌"
+				android:textColor="@color/black"/>
+            
+            <Button
+                android:id="@+id/button6"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_below="@+id/button1"
+                android:background="@drawable/select_train_site"
+                android:text="肱三头肌"
+                android:textColor="@color/black" />
+            
+            <Button
+                android:id="@+id/button7"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button6"
+                android:layout_alignBottom="@+id/button6"
+                android:background="@drawable/select_train_site"
+                android:text="前臂"
+                android:textColor="@color/black" />
+            
+            <Button
+                android:id="@+id/button8"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button7"
+                android:layout_alignBottom="@+id/button7"
+                android:background="@drawable/select_train_site"
+                android:text="腹部" 
+                android:textColor="@color/black"/>
+            
+            <Button
+                android:id="@+id/button9"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button8"
+                android:layout_alignBottom="@+id/button8"
+                android:background="@drawable/select_train_site"
+                android:text="核心" 
+                android:textColor="@color/black"/>
+            
+            <Button
+                android:id="@+id/button10"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button9"
+                android:layout_alignBottom="@+id/button9"
+                android:background="@drawable/select_train_site"
+                android:text="臀部" 
+                android:textColor="@color/black"/>
+            
+            <Button
+                android:id="@+id/button11"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/button6"
+                android:background="@drawable/select_train_site"
+                android:text="大腿"
+                android:textColor="@color/black" />
+            
+            <Button
+                android:id="@+id/button12"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button11"
+                android:layout_alignBottom="@+id/button11"
+                android:background="@drawable/select_train_site"
+                android:text="小腿" 
+                android:textColor="@color/black"/>
+            
+            <Button
+                android:id="@+id/button13"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="5dp"
+                android:layout_toRightOf="@+id/button12"
+                android:layout_alignBottom="@+id/button12"
+                android:background="@drawable/select_train_site"
+                android:text="上本身" 
+                android:textColor="@color/black"/>
+            <Button
+                android:id="@+id/button14"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="5dp"
+                android:layout_toRightOf="@+id/button13"
+                android:layout_alignBottom="@+id/button13"
+                android:background="@drawable/select_train_site"
+                android:text="下半身" 
+                android:textColor="@color/black"/>
+            <Button
+                android:id="@+id/button15"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/button14"
+                android:layout_alignBottom="@+id/button14"
+                android:background="@drawable/select_train_site"
+                android:text="全身" 
+                android:textColor="@color/black"/>
+            </RelativeLayout>
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*最多选择两项"
+                android:textColor="@color/gray"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        
+        <LinearLayout 
+            android:id="@+id/edit_plan_data_select_WV_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            android:background="@drawable/top_bottom_gray_line_normal">
+            
+            <com.ifit.app.other.WheelView
+        		android:id="@+id/edit_plan_data_select_WV"
+        		android:layout_width="match_parent"
+        		android:layout_height="wrap_content"
+    		/>
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/edit_plan_data_select_WV_small_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:background="@drawable/top_bottom_gray_line_normal">
+            
+            <com.ifit.app.other.WheelView_small
+        		android:id="@+id/edit_plan_data_select_WV_small_group"
+        		android:layout_width="100dp"
+        		android:layout_height="150dp"
+    		/>
+            <TextView 
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="x"
+                android:textSize="20dip"
+                android:gravity="center"
+                />
+            <com.ifit.app.other.WheelView_small
+        		android:id="@+id/edit_plan_data_select_WV_small_number"
+        		android:layout_width="100dp"
+        		android:layout_height="150dp"
+    		/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

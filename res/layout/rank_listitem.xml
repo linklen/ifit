@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_bottom_gray_line_normal" >
+
+    <TextView
+        android:id="@+id/rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="1"
+        android:textColor="@color/gold"
+        android:textSize="40dip" />
+
+    <ImageView
+        android:id="@+id/user_head"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/rank"
+        />
+
+    <TextView
+        android:id="@+id/user_nikename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/user_head"
+        android:layout_toRightOf="@+id/user_head"
+        android:text="linklen" />
+
+    <TextView
+        android:id="@+id/weektime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="100" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/weektime"
+        android:layout_alignBottom="@+id/weektime"
+        android:layout_toRightOf="@+id/weektime"
+        android:text="分钟" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rank"
+        android:layout_toRightOf="@+id/user_head"
+        android:text="本周运动总时间约为：" />
+
+</RelativeLayout>

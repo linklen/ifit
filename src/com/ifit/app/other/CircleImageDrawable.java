@@ -1,6 +1,7 @@
 package com.ifit.app.other;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -16,12 +17,15 @@ public class CircleImageDrawable extends Drawable {
 	private Bitmap mBitmap;
 	
 	public CircleImageDrawable(Bitmap bitmap){
+		
 		mBitmap = bitmap;
 		BitmapShader bitmapShader = new BitmapShader(bitmap, TileMode.CLAMP,TileMode.CLAMP);
 		mPaint = new Paint(); 
 		mPaint.setAntiAlias(true); 
 		mPaint.setShader(bitmapShader);  
 		mWidth = Math.min(mBitmap.getWidth(), mBitmap.getHeight());  
+		
+		
 	}
 	@Override
 	public void draw(Canvas canvas) {

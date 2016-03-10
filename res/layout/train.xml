@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        
+        <ImageView 
+        android:id="@+id/btn_exit_train"
+        android:layout_width="25dp"
+        android:layout_margin="10dp"
+        android:layout_height="25dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/imgbt_back"/>
+    
+    <TextView 
+        android:id="@+id/training_action_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="俯卧撑"
+        android:textSize="20dip"
+        android:layout_centerInParent="true"/>
+        
+    <TextView 
+        android:id="@+id/training_action_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:textSize="16dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="跳过"/>
+        
+    </RelativeLayout>
+    
+    <FrameLayout 
+        android:id="@+id/training_action_frag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="visible">
+    
+        <fragment 
+            android:id="@+id/training_action_frag"
+            android:name="com.ifit.app.fragment.training_frag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        
+    </FrameLayout>
+
+    <FrameLayout 
+        android:id="@+id/training_action_resting_frag_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+    
+        <fragment 
+            android:id="@+id/training_action_resting_frag"
+            android:name="com.ifit.app.fragment.resting_frag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        
+    </FrameLayout>
+    
+    <ProgressBar
+        android:id="@+id/training_action_progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:progressDrawable="@drawable/progressbar_horizontal"
+        />
+    
+</LinearLayout>

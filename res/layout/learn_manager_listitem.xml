@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    <LinearLayout 
+        android:id="@+id/learn_manager_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/setting_item_botton_line_seletor"
+        >
+        
+        <TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_vertical"
+	    android:layout_marginLeft="5dp"
+	    android:textSize="18dip"
+	    android:text="文章编号:"/>
+	
+	<TextView 
+	    android:id="@+id/art_id"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_vertical"
+	    android:layout_marginLeft="5dp"
+	    android:textSize="18dip"
+	    android:text="1"/>
+	
+	<TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_vertical"
+	    android:layout_marginLeft="15dip"
+	    android:textSize="18dip"
+	    android:text="标题为:"/>
+	<TextView 
+	    android:id="@+id/art_title"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_vertical"
+	    android:layout_marginLeft="5dp"
+	    android:textSize="18dip"
+	    android:text="这个标题不错!"/>
+        
+    </LinearLayout>
+    
+	
+    
+</RelativeLayout>

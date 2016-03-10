@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/top_bottom_gray_line_normal"
+        android:orientation="vertical">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/titlelayout_bg_normal"
+            android:text="添加管理员"/>
+        
+       <LinearLayout 
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="输入管理员账号："/>
+            <EditText 
+                android:id="@+id/add_admin_accunt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="输入管理员密码："/>
+            <EditText 
+                android:id="@+id/add_admin_password"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+      </LinearLayout>  
+      
+        <Button 
+            android:id="@+id/add_admin_btn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="添加"/>
+       </LinearLayout> 
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/top_bottom_gray_line_normal"
+        android:orientation="vertical">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/titlelayout_bg_normal"
+            android:text="删除管理员"/>
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            
+            <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="输入管理员账号："/>
+            
+            <EditText 
+                android:id="@+id/delete_admin_accunt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <Button 
+                android:id="@+id/search_admin_state_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查询"/>
+        </LinearLayout>
+        
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            >
+            
+            <TextView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="查询结果："/>
+
+            <TextView
+                android:id="@+id/show_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/titlelayout_bg_normal" />
+
+            <Button 
+                android:id="@+id/delete_admin_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="删除"/>
+        </LinearLayout>
+            
+        </RelativeLayout>
+        
+         
+         </LinearLayout>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/top_bottom_gray_line_normal"
+        android:orientation="vertical">
+        
+         <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/titlelayout_bg_normal"
+            android:text="修改管理员密码"/>
+         <LinearLayout 
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="输入管理员账号："/>
+            <EditText 
+                android:id="@+id/change_admin_accunt"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新密码："/>
+            <EditText 
+                android:id="@+id/admin_news_password"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+      </LinearLayout>  
+      
+        <Button 
+            android:id="@+id/change_admin_password_btn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="修改"/>
+       </LinearLayout> 
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+         
+         <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/titlelayout_bg_normal"
+            android:text="查看当前所有管理员"/>
+        
+         <ListView 
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:id="@+id/show_admin_listview"></ListView>
+    </LinearLayout >
+
+</LinearLayout>

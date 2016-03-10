@@ -1,7 +1,7 @@
 package com.ifit.app.activity;
 
 import com.ifit.app.R;
-import com.ifit.app.db.user;
+import com.ifit.app.db.MyDatabaseHelper;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,7 +18,7 @@ public class findpassword extends Activity implements OnClickListener{
 
 	private EditText Einputname,Einputphone;
 	private String Sinputname,Sinputphone;
-	private user usedb;
+	private MyDatabaseHelper usedb;
 	public SQLiteDatabase db;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class findpassword extends Activity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.findpassword);
 		//创建数据库实例
-		usedb = new user(this,"User_table.db",null,1);
+		usedb = new MyDatabaseHelper(this,"DataBase.db",null,1);
 		db = usedb.getReadableDatabase();
 		//发现控件
 		Button back_button = (Button)findViewById(R.id.back_button);

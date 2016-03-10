@@ -24,7 +24,14 @@
         android:clipChildren="false" >
     </android.support.v4.view.ViewPager>
 
-    
+    <RelativeLayout 
+        android:id="@+id/for_measure"
+        android:layout_width="250dp"
+        android:layout_height="450dp"
+        android:layout_alignLeft="@+id/fit_viewpager"
+        android:layout_alignTop="@+id/fit_viewpager">
+        
+    </RelativeLayout>
     <RelativeLayout 
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"

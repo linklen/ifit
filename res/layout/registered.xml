@@ -91,7 +91,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/regist_button"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
+        android:padding="15dp"
         android:textSize="10dip"
         android:text="忘记密码" />
 
@@ -100,7 +101,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="5dp"
+        android:padding="15dp"
         android:layout_alignRight="@+id/regist_button"
         android:text="已有账号，点此登陆"
         android:textSize="10sp" />

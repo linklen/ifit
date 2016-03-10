@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/sky_blue">
+    
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView 
+            android:id="@+id/week_train_set_btnback"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/btn_back_white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerInParent="true"
+            android:textSize="18dip"
+            android:textColor="@color/white"
+            android:text="每周训练" />
+        
+        
+    </RelativeLayout>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择训练日"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"/>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+        
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+            android:id="@+id/monday"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:text="一"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_setweek_select"
+             />
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+            android:id="@+id/tuesday"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:text="二"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_setweek_select"
+             />
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+            android:id="@+id/wednesday"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:text="三"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_setweek_select"
+             />
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+            android:id="@+id/thursday"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:text="四"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_setweek_select"
+             />
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+            android:id="@+id/friday"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:text="五"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_setweek_select"
+             />
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+            android:id="@+id/saturday"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:text="六"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_setweek_select"
+             />
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+            android:id="@+id/sunday"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:text="日"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_setweek_select"
+             />
+        </RelativeLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:id="@+id/week_train_add_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+        
+    </LinearLayout>
+
+    </LinearLayout>
+    
+    </ScrollView>
+</LinearLayout>

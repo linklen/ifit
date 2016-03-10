@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    
+    <RelativeLayout 
+        android:id="@+id/hava_train"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/top_bottom_gray_line_normal"
+        android:visibility="gone"
+        >
+        <TextView 
+            android:id="@+id/weekday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周一"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView 
+            android:id="@+id/plan_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="肩部维度打造计划"
+            android:textSize="20dip"
+            android:layout_centerInParent="true"/>
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/plan_name"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true">
+        <ImageView 
+            android:id="@+id/time_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/time_icon"
+            />
+        <TextView 
+            android:id="@+id/time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60分钟"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/time_img"
+            android:layout_alignBottom="@+id/time_img"/>
+        
+        
+        <ImageView
+            android:id="@+id/location_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/location_marks_shadow"
+            android:layout_toRightOf="@+id/time_text"
+            android:layout_alignBottom="@+id/time_img"/>
+        
+        <TextView 
+            android:id="@+id/location_set_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="家"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/location_img"
+            android:layout_alignBottom="@+id/time_img"/>
+        
+        <ImageView
+            android:id="@+id/purpose_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/purpose_shadow"
+            android:layout_toRightOf="@+id/location_set_text"
+            android:layout_alignBottom="@+id/time_img"/>
+        
+        <TextView 
+            android:id="@+id/purpose_set_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="减脂"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/purpose_img"
+            android:layout_alignBottom="@+id/time_img"/>
+        
+        <ImageView
+            android:id="@+id/site_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/buwei_shadow"
+            android:layout_toRightOf="@+id/purpose_set_text"
+            android:layout_alignBottom="@+id/time_img"/>
+        
+        <TextView 
+            android:id="@+id/site_set_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全身"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/site_img"
+            android:layout_alignBottom="@+id/time_img"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/no_train"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/top_bottom_gray_line_press"
+        android:visibility="gone"
+        >
+        <Button 
+            android:id="@+id/serch_plan_library"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/login_button_selector"
+            android:text="查看计划库，添加计划"/>
+        
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/titlelayout_bg_normal">
+
+	    <EditText
+	        android:id="@+id/add_learn_Title_edit"
+	        android:layout_width="match_parent"
+	        android:layout_height="80dp"
+	        android:hint="请输入文章标题" 
+	        android:gravity="left|top"
+	        android:padding="10dp"
+	        android:textSize="20dip"
+	    	android:background="@null" />
+
+	</LinearLayout>
+	
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1"
+	    android:background="@drawable/titlelayout_bg_normal">
+	    <TextView 
+	        android:layout_centerInParent="true"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/textgray"
+	        android:text="点击选择图片"
+	        android:textSize="25dp"/>"
+	    <ImageView 
+	        android:id="@+id/add_learn_selectImage"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:scaleType="centerCrop"
+	        />
+	</RelativeLayout>
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/titlelayout_bg_normal">
+
+	    <EditText
+	        android:id="@+id/add_learn_url_edit"
+	        android:layout_width="match_parent"
+	        android:layout_height="80dp"
+			android:text="http://"
+	        android:hint="请输入文章网址" 
+	        android:gravity="left|top"
+	        android:padding="10dp"
+	        android:textSize="20dip"
+	    	android:background="@null" />
+
+	</LinearLayout>
+	
+	<Button 
+	    android:id="@+id/add_learn_edit_complete"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="编辑完成,点击发布"
+	    />
+</LinearLayout>

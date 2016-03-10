@@ -2,7 +2,7 @@ package com.ifit.app;
 
 import com.ifit.app.activity.Home_page;
 import com.ifit.app.activity.loginfirst;
-import com.ifit.app.db.user;
+import com.ifit.app.db.MyDatabaseHelper;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.view.Window;
 
 public class LoadActivity extends Activity {
 
-	private user dbcreate;
+	private MyDatabaseHelper dbcreate;
 	public int time = 0;
 	public boolean judge = false;
 	public String user="";
@@ -23,7 +23,7 @@ public class LoadActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.startpic);
-		dbcreate = new user(this,"User_table.db",null,1);
+		dbcreate = new MyDatabaseHelper(this,"DataBase.db",null,1);
 		dbcreate.getReadableDatabase();
 		dbcreate.close();
 		SharedPreferences islogin = getSharedPreferences("islogin", MODE_PRIVATE);

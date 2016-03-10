@@ -1,7 +1,10 @@
 package com.ifit.app.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -58,12 +61,39 @@ public class Setting extends Activity {
 				startActivity(turn_About);
 				break;
 			case R.id.setting_exit_item_layout:
-				finish();
+				confirm_change_user();
 				break;
 			default:
 				break;
 			}
 		}
 		
+	}
+	
+	public void confirm_change_user(){
+		new AlertDialog.Builder(this).setTitle("确定注销？").setMessage("您确定要注销用户吗？")
+		.setPositiveButton("手抖了",null).setNegativeButton("是的", new DialogInterface.OnClickListener(){
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				SharedPreferences.Editor clear_login,clear_data;
+				clear_login = getSharedPreferences("islogin", MODE_PRIVATE)
+						.edit();
+				clear_data = getSharedPreferences("location_user_Data", MODE_PRIVATE)
+						.edit();
+				
+				clear_login.clear();
+				clear_data.clear();
+				
+				clear_login.commit();
+				clear_data.commit();
+				Intent turn_login = new Intent (Setting.this,login.class);
+				//turn_login.putExtra("is_back", true);
+				startActivity(turn_login);
+				finish();
+			}
+			
+		}).show();
 	}
 }

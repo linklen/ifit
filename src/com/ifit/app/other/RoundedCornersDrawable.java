@@ -11,6 +11,7 @@ import android.graphics.RectF;
 import android.graphics.Shader.TileMode;
 import android.graphics.drawable.Drawable;
 import android.media.ThumbnailUtils;
+import android.util.Log;
 
 public class RoundedCornersDrawable extends Drawable {
 
@@ -22,7 +23,7 @@ public class RoundedCornersDrawable extends Drawable {
 	//private float scaleWidth,scaleHeight;
 	private RectF rectF;
 	
-	public RoundedCornersDrawable(Bitmap bitmap){
+	public RoundedCornersDrawable(Bitmap bitmap,int W,int H){
 		
 		/*Matrix matrix = new Matrix();
 		getWidth = bitmap.getWidth();
@@ -31,8 +32,9 @@ public class RoundedCornersDrawable extends Drawable {
 		scaleHeight = ((float)setHeight)/getHeight;
 		matrix.postScale(scaleWidth, scaleHeight);
 		mBitmap = Bitmap.createBitmap(bitmap,0,0,getWidth,getHeight,matrix,true);*/
-		
-		mBitmap = ThumbnailUtils.extractThumbnail(bitmap, 500, 900);
+		//Log.d("xxx", W+""+11);
+		//Log.d("xxx",H+"");
+		mBitmap = ThumbnailUtils.extractThumbnail(bitmap,W,H);
 		BitmapShader bitmapShader = new BitmapShader(mBitmap,TileMode.CLAMP,
 				TileMode.CLAMP);
 		mPaint = new Paint();

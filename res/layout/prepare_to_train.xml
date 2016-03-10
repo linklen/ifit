@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/sky_blue">
+    
+    <RelativeLayout 
+        android:id="@+id/prepare_to_train_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView 
+            android:id="@+id/prepare_to_train_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerCrop"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_back_white"/>
+        
+        <TextView 
+            android:id="@+id/prepare_to_train_name"
+            android:text="动作搜索"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="20dip"/>
+        
+	</RelativeLayout>
+	
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView 
+        android:id="@+id/prepare_to_train_describe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="16dip"
+        android:text="啊啊啊啊啊啊"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp">
+        <ImageView 
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/time_icon"/>
+        <TextView 
+            android:id="@+id/prepare_to_train_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="10分钟"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="17dip"/>
+        
+        <ImageView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/location_marks"/>
+        
+         <TextView 
+             android:id="@+id/prepare_to_train_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="家"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="17dip"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp">
+         
+        <ImageView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/buwei"/>
+        
+        <TextView 
+            android:id="@+id/prepare_to_train_site"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="手臂"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:textSize="14dip"/>
+         
+         <ImageView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/purpose"/>
+        
+        <TextView 
+            android:id="@+id/prepare_to_train_purpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="增肌"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:textSize="14dip"/>
+        
+        <ImageView 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/fire"/>
+        
+        <TextView 
+            android:id="@+id/prepare_to_train_fire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="200千卡"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:layout_marginRight="20dp"
+            android:textSize="14dip"/>
+         </LinearLayout>
+
+    <Button 
+        android:id="@+id/prepare_to_train_btn_to_train"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="进入训练"
+        android:background="@drawable/login_button_selector"/>
+    
+    <LinearLayout 
+        android:id="@+id/prepare_to_train_add_view_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+        
+    </LinearLayout>
+    
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

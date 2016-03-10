@@ -7,12 +7,17 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="21" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" 
+        android:hardwareAccelerated="false">
         <activity
             android:name=".LoadActivity"
             android:label="@string/app_name" >
@@ -32,18 +37,58 @@
         <activity android:name=".activity.Personal_rank"></activity>
         <activity android:name=".activity.Personal_fit"></activity>
         <activity android:name=".activity.Custom_plan"></activity>
-        <activity android:name=".activity.Instant_train"></activity>
-        <activity android:name=".activity.Limit_challenge"></activity>
         <activity android:name=".activity.Sport_record"></activity>
-        <activity android:name=".activity.Week_train"></activity>
         <activity android:name=".activity.Setting"></activity>
         <activity android:name=".activity.Admin"></activity>
         <activity android:name=".activity.Personal_data"></activity>
         <activity android:name=".activity.About"></activity>
         <activity android:name=".activity.Feed_back"></activity>
-        <activity android:name=".other.PickView_dialog" 
+        <activity android:name=".activity.otherPerson_center"></activity>
+        <activity android:name=".activity.news_details"
+         		  android:windowSoftInputMode="stateHidden|stateUnchanged"></activity>
+        <activity android:name=".activity.learn_display"></activity>
+        <activity android:name=".activity.edit_plan"></activity>
+        <activity android:name=".activity.add_plan_action"></activity>
+        <activity android:name=".activity.action_detail"></activity>
+        <activity android:name=".activity.prepare_to_train"></activity>
+        <activity android:name=".activity.week_train_setting"></activity>
+        <activity android:name=".activity.training"></activity>
+        <activity android:name=".activity.train_complete"></activity>
+        <activity android:name=".activity.plan_library"></activity>
+        <activity android:name=".activity.report"></activity>
+        <activity android:name=".admin.learn_manage"></activity>
+        <activity android:name=".admin.add_learn"></activity>
+        <activity android:name=".admin.order_manage"></activity>
+        <activity android:name=".admin.feedback_manage"></activity>
+        <activity android:name=".admin.user_report_manage"></activity>
+        <activity android:name=".admin.View_the_data"></activity>
+        <activity android:name=".admin.Backup_and_restore"></activity>
+        <activity android:name=".admin.user_manage"
+            android:windowSoftInputMode="stateHidden|stateUnchanged"></activity>
+        <activity android:name=".admin.admin_manage"
+            android:windowSoftInputMode="adjustResize|adjustPan"></activity>
+        <activity 
+            android:name=".other.Change_Personal_Data_dialog" 
             android:theme="@style/MyPickView_StyleBottom"
             android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity 
+            android:name=".other.Edit_Plan_ChangeData_dialog" 
+            android:theme="@style/MyPickView_StyleBottom"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <activity 
+            android:name=".activity.News_PublishedActivity"
+            android:theme="@android:style/Theme.NoTitleBar" ></activity>
+        <activity 
+            android:name=".other.select_photo.ImageGridActivity"
+            android:theme="@android:style/Theme.NoTitleBar" ></activity>
+        <activity
+            android:name=".other.select_photo.ImageBucketActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" ></activity>
+        <activity
+            android:name=".other.select_photo.PhotoActivity"
+            android:theme="@android:style/Theme.NoTitleBar" ></activity>
+        
     </application>
 
 </manifest>

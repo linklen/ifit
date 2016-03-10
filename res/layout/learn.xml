@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="200dp"
-    android:layout_height="350dp"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:background="#ffff00"
+    android:background="@color/white"
     android:layout_gravity="center">
     
-
+    <com.ifit.app.other.Normal_ListView_PullDownAndUp.MyListViewPullDownAndUp
+        android:id="@+id/learn_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.ifit.app.other.Normal_ListView_PullDownAndUp.MyListViewPullDownAndUp>
     
-    	<com.ifit.app.other.Normal_ListView_PullDownAndUp.MyListViewPullDownAndUp
-	    android:id="@+id/learn_list"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent">
-		</com.ifit.app.other.Normal_ListView_PullDownAndUp.MyListViewPullDownAndUp>
-	
-</LinearLayout>
+</RelativeLayout>

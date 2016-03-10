@@ -5,8 +5,107 @@
     android:orientation="vertical" >
     
 
-    <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="运动记录"/>
+	<RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        >
+        <ImageView 
+            android:id="@+id/sport_record_in_title_btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/image_btn_back"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="训练数据"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+    
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    
+	    android:background="@color/mint_green">
+        
+	    <TextView 
+	        android:id="@+id/text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="今 日 运 动 热 量 消 耗"
+	        android:layout_marginTop="5dp"
+	        android:textSize="18dip"
+	        android:textColor="@color/white"
+	        android:layout_centerHorizontal="true"/>
+	    
+	    <RelativeLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginBottom="10dp"
+	        android:layout_below="@+id/text">
+	        
+	        <TextView 
+	            android:id="@+id/today_fire"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="50"
+	            android:textColor="@color/white"
+	            android:textSize="60dp"/>
+	        <TextView 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_toRightOf="@+id/today_fire"
+	            android:layout_alignBaseline="@+id/today_fire"
+	            android:text="千卡"
+	            android:textSize="18dip"
+	            android:textColor="@color/white"/>
+	    </RelativeLayout>
+	    
+	</RelativeLayout>
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp">
+	    <TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:layout_centerInParent="true"
+	    android:padding="8dp"
+	    android:text="最近七天训练统计"
+	    android:textColor="@color/gray"
+	    android:textSize="20dip"/>
+	    
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:layout_alignParentBottom="true"
+	        android:text="锻炼\n时间"/>
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginRight="5dp"
+	        android:text="热量\n消耗"/>
+	</RelativeLayout>
+	
+	<RelativeLayout 
+	    android:id="@+id/chart_layout"
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1"
+	    >
+	    <com.github.mikephil.charting.charts.CombinedChart
+        android:id="@+id/combinedChart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"/>
+	</RelativeLayout>
 </LinearLayout>

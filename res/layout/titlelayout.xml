@@ -23,14 +23,6 @@
         android:layout_marginRight="10dp"
         android:src="@drawable/turn_fit_page" />
 
-    <TextView
-        android:id="@+id/title_user_rank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_margin="5dip"
-        android:layout_toLeftOf="@+id/title_user_fit"
-        android:text="本周排名" />
 
     <TextView
         android:id="@+id/title_user_name"
@@ -38,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/title_user_center"
-        android:text="用户名" />
+        android:text="" 
+        android:hint="未填写昵称"/>
 
 </RelativeLayout>

@@ -1,8 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="@color/black">
+    
+    
+    <RelativeLayout 
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        >
+        <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="每周训练"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
+        android:textSize="25dip"/>
+        <ImageView 
+            android:id="@+id/btn_setting"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/btn_setting"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_layout"
+        android:layout_alignLeft="@+id/title_layout">
+        <ImageView 
+            android:id="@+id/img_1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/imgv_calendar"/>
+        
+        <TextView 
+            android:id="@+id/weekday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="星期四"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/img_1"
+            android:textSize="18dip"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+    
+    <TextView 
+        android:id="@+id/train_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="28dip"
+        android:text="今日训练计划"/>
     
 
-</LinearLayout>
+</RelativeLayout>

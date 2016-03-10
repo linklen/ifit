@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        >
+        <ImageView 
+            android:id="@+id/edit_plan_addview_layout_action_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            />
+        
+        <RelativeLayout 
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            >
+            <TextView 
+            android:id="@+id/edit_plan_addview_layout_action_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上斜哑铃飞鸟"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"/>
+            
+            <LinearLayout 
+                android:id="@+id/edit_plan_addview_layout_action_group_Number_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/edit_plan_addview_layout_action_name"
+                android:layout_below="@+id/edit_plan_addview_layout_action_name"
+                android:orientation="horizontal">
+                <TextView 
+            android:id="@+id/edit_plan_addview_layout_action_group_Number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3组"
+            android:layout_centerHorizontal="true"
+            />
+                <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="x"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+                <TextView 
+            android:id="@+id/edit_plan_addview_layout_action_Number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10个"
+            android:layout_centerHorizontal="true"
+            />
+                
+            </LinearLayout>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_height="100dp"
+            android:layout_width="wrap_content">
+            <ImageView 
+                android:id="@+id/edit_plan_addview_layout_action_Number_edit"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/btn_edit"/>
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp">
+            <ImageView 
+                android:id="@+id/edit_plan_addview_layout_action_delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="5dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/btn_delete"/>
+        </RelativeLayout>
+        
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout 
+            android:id="@+id/edit_plan_addview_layout_rest_time_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            >
+            <ImageView 
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:layout_gravity="bottom"
+                android:src="@drawable/time_icon"/>
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/gray"
+                android:text="休息时间"/>
+            <TextView 
+                android:id="@+id/edit_plan_addview_layout_rest_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:textColor="@color/gray"
+                android:background="@drawable/titlelayout_bg_normal"
+                android:text="60秒"/>
+        </LinearLayout>
+        
+    </RelativeLayout>
+
+</LinearLayout>

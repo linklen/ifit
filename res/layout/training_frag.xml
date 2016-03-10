@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="1">
+	    
+	    <com.ant.liao.GifView
+	        android:id="@+id/training_frag_action_gif"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:enabled = "false"
+	        />
+	    
+	</RelativeLayout>
+	
+    <TextView 
+        android:id="@+id/training_frag_action_describe"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+        />
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/top_bottom_gray_line_normal">
+        
+        <TextView 
+            android:id="@+id/training_frag_action_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:layout_centerVertical="true"
+            android:textSize="35dip"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个"
+            android:layout_marginLeft="5dp"
+            android:textSize="16dip"
+            android:textColor="@color/gray"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/training_frag_action_number"
+            />
+
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用时"/>
+            <Chronometer 
+            android:layout_marginLeft="10dp"
+            android:id="@+id/training_frag_action_chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format="%s"/>
+        </LinearLayout>
+        
+        <TextView 
+            android:id="@+id/training_frag_action_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2/3"
+            android:layout_toLeftOf="@+id/training_frag_action_zu"
+            android:textSize="25dip"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"/>
+        <TextView 
+            android:id="@+id/training_frag_action_zu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dip"
+            android:text="组"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+        
+
+        
+        <RelativeLayout 
+            android:id="@+id/action_achive_btn_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/training_frag_action_chronometer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp">
+            
+          <ImageView 
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/cycle_blue"
+            />
+          
+          <TextView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:text="完成"
+              android:textColor="@color/white"
+              android:textSize="25dip"/>
+            
+            
+        </RelativeLayout>
+
+        
+    </RelativeLayout>
+</LinearLayout>

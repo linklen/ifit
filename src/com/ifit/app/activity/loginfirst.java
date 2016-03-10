@@ -39,6 +39,7 @@ public class loginfirst extends Activity implements OnClickListener{
 		switch (v.getId()){
 		case R.id.firstdl:
 			Intent login = new Intent(this,login.class);
+			login.putExtra("is_back", false);
 			startActivity(login);
 			overridePendingTransition(R.anim.alpha_in, R.anim.alpha_out);
 			finish();

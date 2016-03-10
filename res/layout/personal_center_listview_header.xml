@@ -21,27 +21,31 @@
         
         <TextView
             android:id="@+id/user_nickname"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/user_pic"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:textColor="@color/white"
-            android:text="用户名" 
+            android:text=""
+            android:hint="未设置昵称" 
             />
-        <LinearLayout 
+        <RelativeLayout 
             android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_below="@+id/user_nickname"
             android:layout_marginTop="5dp">
             
-            <TextView
+       <TextView
             android:id="@+id/user_age"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="22岁" 
+            android:layout_toLeftOf="@+id/user_location_marks"
+            android:text=""
+            android:hint="未填写年龄"
+            android:gravity="right"
             android:textColor="@color/white"/>
 		
 		<ImageView 
@@ -49,19 +53,23 @@
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_gravity="center"
-            android:layout_marginRight="5dp"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:src="@drawable/location_marks"
+            
             />
 		
         <TextView
             android:id="@+id/user_region"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="温州市"
+            android:layout_toRightOf="@+id/user_location_marks"
+            android:text="火星"
             android:textColor="@color/white"
+           
             />
-        </LinearLayout>
+        </RelativeLayout>
 		
         
     </RelativeLayout>

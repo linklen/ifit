@@ -1,7 +1,7 @@
 package com.ifit.app.activity;
 
 import com.ifit.app.R;
-import com.ifit.app.db.user;
+import com.ifit.app.db.MyDatabaseHelper;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,7 +27,7 @@ public class registe extends Activity implements OnClickListener {
 
 	private EditText Einputname,Einputkey,Einputphone,Einputconkey;
 	private String Sinputname,Sinputkey,Sinputconkey,Sinputphone;
-	private user usedb;
+	private MyDatabaseHelper usedb;
 	public SQLiteDatabase db;
 	public int click_back_count = 0;
 	@Override
@@ -37,7 +37,7 @@ public class registe extends Activity implements OnClickListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.registered);
 		//数据库实例化
-		usedb = new user(this,"User_table.db",null,1);
+		usedb = new MyDatabaseHelper(this,"DataBase.db",null,1);
 		db = usedb.getWritableDatabase();
 		//找到各种组建
 		TextView turn_login = (TextView)findViewById(R.id.turn_login);
@@ -136,11 +136,17 @@ public class registe extends Activity implements OnClickListener {
 	public void addUser (String addname,String addpassword,String addphone){
 		ContentValues values = new ContentValues();
 		values.put("name", addname);
+		
+		db.insert("User_personal_info_table", null, values);
+		db.insert("User_body_data_table", null, values);
+		db.insert("User_headImage_table", null, values);
+		
 		values.put("password", addpassword);
 		values.put("phone", addphone);
 		values.put("isadmin", "false");
 		values.put("isnew", "true");
 		db.insert("User_table", null, values);
+		
 	}
 
 	@Override

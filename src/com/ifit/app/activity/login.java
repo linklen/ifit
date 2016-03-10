@@ -1,7 +1,7 @@
 package com.ifit.app.activity;
 
 import com.ifit.app.R;
-import com.ifit.app.db.user;
+import com.ifit.app.db.MyDatabaseHelper;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -26,7 +26,7 @@ import android.widget.Toast;
 public class login extends Activity implements OnClickListener{
 
 	private EditText Einputname,Einputkey;
-	private user usedb;
+	private MyDatabaseHelper usedb;
 	private SQLiteDatabase db;
 	public int click_back_count = 0;
 	
@@ -37,7 +37,7 @@ public class login extends Activity implements OnClickListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.login);
 		//数据库实例化
-		usedb = new user(this,"User_table.db",null,1);
+		usedb = new MyDatabaseHelper(this,"DataBase.db",null,1);
 		db = usedb.getWritableDatabase();
 		//发现控件
 		TextView turn_findpassword = (TextView)findViewById(R.id.turn_findpassword);
@@ -99,7 +99,7 @@ public class login extends Activity implements OnClickListener{
 		
 		//判断是否是注销返回的
 				Intent isback = getIntent();
-				boolean is_back = isback.getBooleanExtra("is_back", false);
+				boolean is_back = isback.getBooleanExtra("is_back", true);
 		
 		Cursor cursor =  db.query("User_table", 
 		new String[]{"name,password,isadmin,isnew"}, "name = ?", 
@@ -117,6 +117,7 @@ public class login extends Activity implements OnClickListener{
 				}else{
 					if(cursor.getString(cursor.getColumnIndex("isadmin")).equals("true")){
 						Intent adminlogin = new Intent(this,Admin.class);
+						adminlogin.putExtra("adminname", name);
 						startActivity(adminlogin);
 						if(!is_back){
 						loginfirst.loginfirst_instance.finish();
@@ -126,7 +127,7 @@ public class login extends Activity implements OnClickListener{
 						//搭建SharedPreference
 						SharedPreferences.Editor islogin = 
 								getSharedPreferences("islogin", MODE_PRIVATE).edit();
-						islogin.putString("user", name);
+						islogin.putString("user",name);
 						islogin.putBoolean("login_in", true);
 						islogin.commit();
 						//搭建Intent并传递数据
@@ -141,7 +142,8 @@ public class login extends Activity implements OnClickListener{
 						userlogin.putExtra("is_send", true);
 						startActivity(userlogin);
 						if(!is_back){
-						loginfirst.loginfirst_instance.finish();}
+						loginfirst.loginfirst_instance.finish();
+						}
 						finish();
 					}
 				}
@@ -184,6 +186,5 @@ public class login extends Activity implements OnClickListener{
 		}
 		
 	};
-	
-	
+
 }
