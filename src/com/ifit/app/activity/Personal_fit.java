@@ -16,6 +16,8 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.apache.http.impl.conn.tsccm.WaitingThread;
+
 import com.ifit.app.R;
 import com.ifit.app.adapter.MyPagerAdapter;
 import com.ifit.app.db.MyDatabaseHelper;
@@ -68,7 +70,6 @@ public class Personal_fit extends Activity {
 	private RelativeLayout personal_fit_layout;
 	private LayoutInflater inflater;
 	private Bitmap bitmap;
-	private static boolean istraverse = false;
 	private boolean istrain = false;
 	
 	ImageView btn_setting;
@@ -1221,20 +1222,16 @@ public class Personal_fit extends Activity {
 	
 	public void Unzip(){
 		
-		if(!istraverse){
-		
-		sdCard = Environment.getExternalStorageDirectory();
-		directory = new File(sdCard.getAbsolutePath()
-				+ "/ifit/temp/");
-		
-		
-		new Thread(new Runnable() {
+		excutorService.submit(new Runnable() {
 			
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				String outputAciton = directory.toString()+"/Unzip/";
-				String outputPlan = directory.toString()+"/plan_library/";
+				File sd = Environment.getExternalStorageDirectory();
+				File indirectory = new File(sd.getAbsolutePath()
+						+ "/ifit/temp/");
+				String outputAciton = indirectory.toString()+"/Unzip/";
+				String outputPlan = indirectory.toString()+"/plan_library/";
 				try {
 					Log.d("xxx", "进入线程");
 					UnzipAssets.unZip(Personal_fit.this,"myzip.zip", outputAciton);
@@ -1246,12 +1243,9 @@ public class Personal_fit extends Activity {
 					Log.d("xxx", e.toString());
 				}
 			}
-		}).start();
+		});
 		
-		istraverse = true;
 		}
-		
-	}
 	
 	
 	

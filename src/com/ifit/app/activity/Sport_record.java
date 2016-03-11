@@ -84,12 +84,12 @@ public class Sport_record extends Activity {
 		xaxis.setDrawGridLines(false);
 		
 		YAxis ylaxis = Chart.getAxisLeft();
-		ylaxis.setAxisMaxValue(100f); 
+		ylaxis.setAxisMaxValue(120f); 
 		ylaxis.setDrawAxisLine(false);
 		ylaxis.setLabelCount(3, true);
 		
 		YAxis yraxis = Chart.getAxisRight();
-		yraxis.setAxisMaxValue(600f); 
+		yraxis.setAxisMaxValue(2000f); 
 		yraxis.setDrawAxisLine(false);
 		yraxis.setLabelCount(3, true);
 		

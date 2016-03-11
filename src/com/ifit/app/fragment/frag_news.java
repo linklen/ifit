@@ -15,6 +15,7 @@ import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.format.Time;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -105,7 +106,7 @@ public class frag_news extends Fragment{
 			lastnews_id = news_cursor.getString(news_cursor.getColumnIndex("news_id"));
 		}
 		
-		if (news_cursor.getCount() >= 5) {
+		if (news_cursor.getCount() >= 10) {
 
 			for (int i = 0; i <  10; i++) {
 				// 这些查询本应该在服务器上做的
@@ -544,7 +545,7 @@ public class frag_news extends Fragment{
 		if(news_cursor.getCount()>0){
 			lastnews_id = news_cursor.getString(news_cursor.getColumnIndex("news_id"));
 		}
-		adapter.clear();
+		newsItemList.clear();
 		
 			for (int i = 0; i <  now_size; i++) {
 				// 这些查询本应该在服务器上做的

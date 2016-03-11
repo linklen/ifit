@@ -455,6 +455,9 @@ public class News_PublishedActivity extends Activity {
 					
 					String temp_text = published_editor.getText().toString();
 					save_editor.putString("temp_text", temp_text);
+					Bimp.bmp.clear();
+					Bimp.drr.clear();
+					Bimp.max = 0;
 					save_editor.commit();
 					finish();
 					db.close();

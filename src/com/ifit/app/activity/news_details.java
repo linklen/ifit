@@ -634,6 +634,8 @@ public class news_details extends Activity {
 				add_view_layout.removeView(v);
 				db.delete("User_news_mark_table","marktime=? and markname = ? and marktitle =?", new String[]{time,name,title});
 				
+				mark_count--;
+				comment_count.setText(mark_count+"");
 				Toast.makeText(news_details.this, "É¾³ý³É¹¦", Toast.LENGTH_SHORT).show();
 			}
 		}).setPositiveButton("·ñ", null).show();

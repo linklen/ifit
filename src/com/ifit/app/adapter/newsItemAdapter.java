@@ -1098,7 +1098,7 @@ public class newsItemAdapter extends ArrayAdapter<newsItem> {
 		//如果不设置popu的背景，无论是点击外部区域还是back键都步法dissmiss弹窗
 		popu.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.completely_transparent));
 
-		popu.showAsDropDown(v,-100, -50,Gravity.RIGHT);
+		popu.showAsDropDown(v,-100, -50);
 				
 	}
 	
@@ -1150,8 +1150,9 @@ public class newsItemAdapter extends ArrayAdapter<newsItem> {
 		//如果不设置popu的背景，无论是点击外部区域还是back键都步法dissmiss弹窗
 		popu.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.completely_transparent));
 
-		popu.showAsDropDown(v,-100, -50,Gravity.RIGHT);
-				
+		popu.showAsDropDown(v,-100, -50);
+		//popu.showAsDropDown(contentView);
+		//popu.showAtLocation(v, Gravity.RIGHT,100, 110);
 	}
 	
 	public void showdiolog(final int position){
@@ -1174,6 +1175,8 @@ public class newsItemAdapter extends ArrayAdapter<newsItem> {
 					path = item.getImage_one_id();
 				}
 				
+				if(path != null ){
+					if(!path.equals("")){
 				File file = new File (path);
 				File parent =file.getParentFile();
 				for(File i : parent.listFiles()){
@@ -1182,7 +1185,8 @@ public class newsItemAdapter extends ArrayAdapter<newsItem> {
 					}
 				}
 				parent.delete();
-				
+					}
+				}
 				db.delete("User_news_table", "news_id = ?", new String[]{id});
 				db.delete("User_news_good_table", "news_id = ?", new String[]{id});
 				db.delete("User_news_mark_table", "news_id = ?", new String[]{id});

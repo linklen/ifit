@@ -168,7 +168,7 @@ public class custom_plan_in_ItemAdapter extends ArrayAdapter<custom_plan_in_item
 		//如果不设置popu的背景，无论是点击外部区域还是back键都步法dissmiss弹窗
 		popu.setBackgroundDrawable(getContext().getResources().getDrawable(R.drawable.completely_transparent));
 
-		popu.showAsDropDown(v,-60, -60,Gravity.RIGHT);
+		popu.showAsDropDown(v,-125, -60);
 				
 	}
 	

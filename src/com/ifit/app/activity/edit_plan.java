@@ -460,6 +460,7 @@ public class edit_plan extends Activity {
 					if(!((TextView)v).getText().equals(getReturn_Data)){
 						((TextView)v).setText(getReturn_Data);
 					}
+					break;
 				case R.id.edit_plan_addview_layout_action_Number_edit:
 					
 					View v1 = cr.get_tempView();

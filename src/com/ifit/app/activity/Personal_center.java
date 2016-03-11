@@ -45,7 +45,7 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 	private newsItemAdapter adapter;
 	private LayoutInflater layoutInflater;
 	private ImageView btn_back,turn_setting,user_headImage,show_headimg;
-	//private Bitmap mbitmap;
+	private Bitmap mbitmap;
 	private AlertDialog show_headimg_dialog;
 	private View show_headimg_View , listView_head;
 	private TextView user_nickname,user_age,user_region,news_count,user_spottime;
@@ -248,7 +248,6 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 		
 		//获取头像
 		
-		Bitmap mbitmap;
 		
 		headimg_cursor = db.query("User_headImage_table", null, "name = ?",
 				new String[] { username }, null, null, null);
@@ -281,20 +280,20 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 			
 			for(int i=0;i<5;i++){
 			//这些查询本应该在服务器上做的
-				setList(mbitmap);
+				setList();
 				
 			}
 			
 		}else{
 			for(int i=0;i<news_cursor.getCount();i++){
-				setList(mbitmap);
+				setList();
 			}
 		}
 		
 
 	}
 	
-	public void setList(Bitmap mbitmap){
+	public void setList(){
 		
 		
 		String img1 = news_cursor.getString(news_cursor.getColumnIndex("imagepath_1"));
@@ -405,24 +404,7 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 	@Override
 	public void onLoad() {
 		// TODO Auto-generated method stub
-		//获取头像
 		
-				Bitmap mbitmap;
-				
-				headimg_cursor = db.query("User_headImage_table", null, "name = ?",
-						new String[] { username }, null, null, null);
-				headimg_cursor.moveToFirst();
-
-				if (headimg_cursor.getBlob(headimg_cursor
-						.getColumnIndex("user_head_img")) != null) {
-					byte[] get_Headimg = headimg_cursor.getBlob(headimg_cursor
-							.getColumnIndex("user_head_img"));
-					mbitmap = BitmapFactory.decodeByteArray(get_Headimg, 0,
-							get_Headimg.length);
-				} else {
-					mbitmap = BitmapFactory.decodeResource(getResources(),
-							R.drawable.default_headimage);
-				}
 		//Log.d("xxx", newsItemList.size()+"");
 		//Log.d("xxx", news_cursor.getCount()+"");
 		int rest_news_count = news_cursor.getCount() - newsItemList.size();
@@ -432,12 +414,12 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 		}else{
 			if(rest_news_count<=5){
 				for(int i=0;i<rest_news_count;i++){
-					setList(mbitmap);
+					setList();
 				}
 			}else{
 				for(int i=0;i<5;i++){
 					//这些查询本应该在服务器上做的
-						setList(mbitmap);
+						setList();
 						
 					}
 			}
@@ -496,7 +478,6 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 				break;
 			case R.id.user_pic:
 				
-				Bitmap mbitmap;
 				
 				if(location_image.exists()){
 					//查看是否有头像，或者本地是否有，有就设置
@@ -519,7 +500,6 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 				//params.width = 600;
 				//params.height = 600-32;
 				show_headimg_dialog.getWindow().setAttributes(params);
-				mbitmap.recycle();
 				break;
 			}
 		}
@@ -545,7 +525,6 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 
 	public void set_data(){
 		
-		Bitmap mbitmap;
 		
 		//设置头像
 		if(location_image.exists()){
@@ -578,14 +557,13 @@ public class Personal_center extends Activity implements OnRefreshListener,OnLoa
 			user_region.setText("火星");
 		}
 		
-		mbitmap.recycle();
 		
 	}
 	@Override
 	public void finish() {
 		// TODO Auto-generated method stub
 		super.finish();
-		//mbitmap.recycle();
+		mbitmap.recycle();
 		overridePendingTransition(R.anim.slide_uptoin, R.anim.slide_intodown);
 		db.close();
 		news_cursor.close();
